@@ -1,0 +1,8 @@
+<h1>MAP</h1>
+
+
+<div class="map">
+  <% @countries.each do |country| %>
+      <p><a href="/?country_id=<%= country['id'] %>"><%= country['country_name'] %></a></p>
+  <% end %>
+</div>

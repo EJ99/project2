@@ -1,0 +1,9 @@
+<div class="index-wrapper">
+<% @sightings.each do |sighting| %>
+  <div class="post">
+    <img class="image" src="<%= sighting['image_url'] %>" />
+    <p id="location"><a href="/sightings/<%= sighting['id'] %>"><%= sighting['name'] %></a></p>
+  </div>
+<% end %>
+
+</div>
