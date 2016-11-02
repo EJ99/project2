@@ -7,11 +7,13 @@ CREATE DATABASE sasquatch;
     country_id INTEGER,
     user_id INTEGER,
     date DATE,
-    l INTEGER,
-    d INTEGER
   );
 
-  INSERT INTO sightings (name, image_url) VALUES ('BF sighting', 'https://i.ytimg.com/vi/adwK4irr_Yo/maxresdefault.jpg')
+  INSERT INTO sightings (name, image_url) VALUES ('BF sighting', 'https://i.ytimg.com/vi/adwK4irr_Yo/maxresdefault.jpg');
+
+  ALTER TABLE sightings ADD COLUMN L;
+
+
 
   ---COUNTRIES TABLE
 
@@ -51,6 +53,14 @@ INSERT INTO countries (country_name) VALUES ('Afganistan');
 CREATE TABLE comments (
   id SERIAL4 PRIMARY KEY,
   body TEXT,
+  sighting_id INTEGER,
+  user_id INTEGER
+);
+
+--- LIKES TABLE
+
+CREATE TABLE likes (
+  id SERIAL4 PRIMARY KEY,
   sighting_id INTEGER,
   user_id INTEGER
 );

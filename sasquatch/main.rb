@@ -2,6 +2,8 @@ require 'pry'
 require 'sinatra'
 require 'sinatra/reloader'
 require_relative 'db_config'
+# require_relative 'models/my_uploader'
+# require 'carrierwave/orm/activerecord'
 require_relative 'models/sighting'
 require_relative 'models/user'
 require_relative 'models/country'
@@ -10,6 +12,10 @@ require_relative 'models/comment'
 ## SESSION METHODS
 
 enable :sessions #creates session as a global object - basically a hash
+#it just store the current user_id once logged in
+#user_id is a made up thing
+#can also put :last_url so that the website remembers the last page they were on and go back to it after logged in
+#session[:user]
 
 helpers do
   def logged_in?
@@ -28,6 +34,13 @@ end
 ## GET/POST METHODS
 
 get '/' do
+  #put a binding.pry here and then type in request in pry where the program is stopped
+  #could do request.path
+  # request.referrer
+  #request.port
+  #request.host
+  @countries = Country.all
+  # binding.pry
   erb :index
 end
 
@@ -37,8 +50,9 @@ get '/sightings/new' do  #shows the form only
   erb :sightings_new
 end
 
-post '/sightings' do  #creates the post only
-    @sighting = Sighting.create(name: params[:name], image_url: params[:image_url], country_id: params[:continent_id], date: params[:date])
+post '/sightings/all' do  #creates the post only
+    binding.pry
+    @sighting = Sighting.create(name: params[:name], image_url: params[:image_url], country_id: params[:country_id], user_id: current_user.id, date: params[:date])
     redirect to '/'
 end
 
@@ -77,11 +91,14 @@ end
 
 #posts the comment when the form/post comment action button is triggered
 post '/comments' do
-  comment = Comment.create(body: params[:body], sighting_id: params[:sighting_id])
+  comment = Comment.create(body: params[:body], sighting_id: params[:sighting_id], user_id: current_user.id)
+  # #commmment = Comment.new
+  # commmment.user_id = current_user.id
   redirect to "/sightings/#{comment['sighting_id']}"
 end
 
 get '/join' do
+  @countries = Country.all
   erb :join
 end
 
@@ -99,7 +116,7 @@ post '/session' do
   user = User.find_by(username: params[:username])  ##if cant find the user in the database it will return NIL
   if user && user.authenticate(params[:password])
     #you are in the database, let me create a session for you
-    session[:user_id] = user.id
+    session[:user_id] = user.id  #write the user id to the session
     redirect '/'
   else
     #not recoginised

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Didact+Gothic|Inconsolata|Lobster+Two|Maven+Pro|Oxygen|Pacifico|Varela+Round" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <div class="menu">
+        <h1><a href="/" id="title">Travel Diary</a></h1>
+        <a href="/trips/new">+ Add Entry</a>
+        <a href="/map">+ Map</a>
+
+<!-- LOG IN / LOG OUT -->
+  <!-- session[:user_id] = user.id      #to see what number id user is logged in-->
+
+
+        </div>
+
+<% if logged_in? %>
+
+<div class="log-out">
+
+<form action="/session" method="post">    <!--because there isnt a delete method use post-->
+  <input type="hidden" name="_method" value="delete">    <!--- and this allows a delete session -->
+  <button>Log Out</button>
+</form>
+</div>
+
+<div class="logged-in">
+  <p>Logged in as: <%= current_user.email %></p>
+</div>
+
+
+
+<% else %>
+
+<a href="/session/new" class="log-in">LOGIN</a>
+
+<% end %>
+
+    </nav>
+    <div class="spacer"></div>
+    <%= yield %>
+
+  </body>
+</html>

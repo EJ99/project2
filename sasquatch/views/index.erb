@@ -1,6 +1,20 @@
-<div class="search">
+<!-- <div class="search2">
     <form action="/results" method="get">
       <input id="input" type="text" name="movies" value="" placeholder="Find by location..">
       <button id="button" name="button">GO</button>
     </form>
+</div> -->
+
+
+<div class="index-wrapper">
+
+  <div class="search">
+    <select name="country_id">
+      <option id="disabled" value="" disabled selected>Find your nearest sasquatch..</option>
+      <% @countries.each do |country| %>
+        <option value="<%= country['id'] %>"><%= country['name'] %></option>
+      <% end %>
+    </select>
+  </div>
+
 </div>

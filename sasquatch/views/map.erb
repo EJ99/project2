@@ -3,6 +3,6 @@
 
 <div class="map">
   <% @countries.each do |country| %>
-      <p><a href="/?country_id=<%= country['id'] %>"><%= country['country_name'] %></a></p>
+      <p><a href="/?country_id=<%= country['id'] %>"><%= country['name'] %></a></p>
   <% end %>
 </div>

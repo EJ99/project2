@@ -10,13 +10,32 @@
     <nav>
       <ul class="nav">
         <li><a href="/sightings/all">SIGHTINGS</a></li>
-        <li><a href="/map">MAP</a></li>
+        <li><a href="/join">+ REPORT</a></li>
         <li><a href="/" id="logo">find my<br><span id="sass">sasquatch<span></a></li>
-        <li><a href="/join">MEMBERSHIP</a></li>
-        <li><a href="/session/new">LOGIN</a></li>
+        <li><a href="/map">MAP</a></li>
+        <!-- <li><a href="/session/new">LOGIN</a></li> -->
+        <li> <% if logged_in? %>
+
+              <div class="log-out">
+                <form action="/session" method="post">    <!--because there isnt a delete method use post-->
+                  <input type="hidden" name="_method" value="delete">    <!--- and this allows a delete session -->
+                  <button>Log Out</button>
+                </form>
+              </div>
+
+              <div class="logged-in">
+                <p>Hello <%= current_user.first %></p>
+              </div>
+
+            <% else %>
+                <a href="/session/new" class="log-in">LOGIN</a>
+            <% end %>
+        </li>
       </ul>
 
     </nav>
+
+
 
     <%= yield %>
 

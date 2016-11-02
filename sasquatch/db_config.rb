@@ -7,10 +7,7 @@ options = {
   database: 'sasquatch'
 }
 
-ActiveRecord::Base.establish_connection({
-  adapter: 'postgresql',
-  database: 'sasquatch'
-})
+ActiveRecord::Base.establish_connection(options)
 
 # PG.connect({
 #  dbname: 'sdfsdf'

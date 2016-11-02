@@ -54,6 +54,10 @@ html, body{
   color:#FBF4DA;
 }
 
+/*.nav a:active{
+  color:#FBF4DA;
+}*/
+
 #logo{
   font-family: gorilla;
   line-height: 26px;
@@ -63,6 +67,47 @@ html, body{
 #sass{
   font-size:35px;
 }
+
+.logged-in{
+  font-size: 14px;
+  display: inline;
+  float:right;
+  margin-right: 20px;
+  margin-top: 15px;
+  font-family: giacco;
+}
+
+.log-out{
+  font-size: 20px;
+  display: inline;
+  float:right;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+.log-out button{
+    font-family: giacco;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #D96358;
+    width: 100px;
+    border: 0;
+    padding: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border:none;
+    margin-right: 30px;
+    display:inline;
+}
+
+
+.log-out button:hover{
+  background: #dd1526;
+}
+
 
 .fix{
    position:fixed;
@@ -97,6 +142,50 @@ html, body{
     text-align: center;
 }
 
+.index-wrapper{
+    max-width:100%;
+    margin:0 auto;
+    background-image: url(../images/main2.png);
+    background-size: 100% 100% ;
+    height:100vh;
+
+}
+
+.search{
+    padding: 0;
+    margin: 0;
+    width: 700px;
+    height:60px;
+    overflow: hidden;
+    background-color: #fff;
+    background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;
+    font-size:40px;
+    position: relative;
+    left:25%;
+    top:42%;
+}
+
+.search select {
+    padding: 5px 8px;
+    width: 150%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size:20px;
+}
+
+#disabled{
+  color:darkgray;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
 /*----SIGHTINGS PAGE---*/
 
 .image{
@@ -104,6 +193,81 @@ html, body{
   min-height: 475px;
 
 }
+
+
+/*----REGISTER PAGE----*/
+
+.para h3{
+  margin:0;
+  font-family: gorilla;
+  font-size: 30px;
+  margin-bottom: 8%;
+}
+
+.para{
+  font-family: giacco;
+  width:33%;
+  float:left;
+  margin:7% 1% 10% 13%;
+  line-height: 30px;
+  font-size: 22px;
+}
+
+
+.login-page2 {
+  width:45%;
+  padding:2%  0;
+  float:right;
+  margin:0;
+  margin-top: 2%;
+}
+
+.login-page2 label{
+  margin-bottom: 3px;
+  font-family: giacco;
+  font-size: 20px;
+  color:#373735;
+}
+
+
+.form2 {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  padding-top: 20px;
+}
+
+.form2 input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.form2 button {
+  font-family: giacco;
+  text-transform: uppercase;
+  outline: 0;
+  background: #D96358;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 22px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form2 button:hover,.form2 button:active,.form2 button:focus {
+  background: #dd1526;
+}
+
 
 /*----LOGIN PAGE---*/
 
@@ -125,7 +289,7 @@ footer{
 
 .login-background{
   background-color: #D3D3D3;
-  /*height:1080px;*/
+  height:1080px;
   width:100%;
   margin:0;
 }
@@ -168,7 +332,7 @@ footer{
   font-family: giacco;
   text-transform: uppercase;
   outline: 0;
-  background: #D96358;
+    background: #D96358;
   width: 100%;
   border: 0;
   padding: 15px;
