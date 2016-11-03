@@ -382,3 +382,16 @@ footer{
 }
 
 /*----PROFILE PAGE ----*/
+
+.prof-title{
+  font-family: gorilla;
+  font-size: 35px;
+  margin:0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width:40%;
+  padding-top: 5%;
+  margin-bottom: 0;
+  color:#373735;
+}

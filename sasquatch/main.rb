@@ -2,8 +2,9 @@ require 'pry'
 require 'sinatra'
 require 'sinatra/reloader'
 require_relative 'db_config'
-# require_relative 'models/my_uploader'
-# require 'carrierwave/orm/activerecord'
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+require 'fog'
 require_relative 'models/sighting'
 require_relative 'models/user'
 require_relative 'models/country'
@@ -53,8 +54,7 @@ end
 
 #creates the new post
 post '/sightings/all' do
-    binding.pry
-    @sighting = Sighting.create(name: params[:name], image_url: params[:image_url], country_id: params[:country_id], user_id: current_user.id, date: params[:date])
+    @sighting = Sighting.create(name: params[:name], image_url: params[:image_url], country_id: params[:country_id], user_id: current_user.id, date: params[:date], picture: params[:picture])
     redirect to '/'
 end
 
@@ -86,7 +86,7 @@ get '/sightings/all/:id' do
 end
 
 
-#this is brings up the edit form when ever you click edit
+#this brings up the edit form when ever you click edit
 get '/sightings/all/:id/edit' do
   @countries = Country.all
   @sighting = Sighting.find(params[:id])
@@ -108,7 +108,7 @@ post '/comments' do
   comment = Comment.create(body: params[:body], sighting_id: params[:sighting_id], user_id: current_user.id)
   # #commmment = Comment.new
   # commmment.user_id = current_user.id
-  redirect to "/sightings/#{comment['sighting_id']}"
+  redirect to "/sightings/all/#{comment['sighting_id']}"
 end
 
 #report a sighting or join to report page
@@ -155,4 +155,11 @@ end
 get '/profile/:id' do
   @user = User.find(params[:id])
   erb :profile
+end
+
+#EDIT profile
+
+get '/profile/:id/edit' do
+  @user = User.find(params[:id])
+  erb :profile_edit
 end

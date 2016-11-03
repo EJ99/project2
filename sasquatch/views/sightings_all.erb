@@ -6,6 +6,7 @@
     <p> <%= sighting['date'] %>  </p>
     <p> Posted by: <a href="/profile/<%= sighting['user_id']%>"> <%= sighting.user.username %> </a></p>
     <p> Location: <%=sighting.country.name %>
+    <img class="image" src="<%= sighting.picture.url %>">
     </div>
   <% end %>
 </div>

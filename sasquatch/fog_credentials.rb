@@ -1,4 +1,3 @@
-
 CarrierWave.configure do |config|
   config.fog_credentials = {
     # Configuration for Amazon S3 should be made available through an Environment variable.
@@ -18,18 +17,7 @@ CarrierWave.configure do |config|
   }
 
   config.storage = :fog
-  config.fog_directory = ENV['S3_BUCKET']
+  config.fog_directory    = ENV['S3_BUCKET']
+
   # config.cache_dir = "#{Rails.root}/tmp/uploads"                  # To let CarrierWave work on heroku
-end
-
-
-class MyUploader < CarrierWave::Uploader::Base
-  storage :fog
-end
-
-class Sighting < ActiveRecord::Base  #access the methods
-   belongs_to :user
-   belongs_to :country
-   has_many :comments
-   mount_uploader :picture, MyUploader
 end

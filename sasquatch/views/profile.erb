@@ -1,10 +1,22 @@
-<h1 class="titles">User Profile:</h1>
-<div class="wrapper">
+<h1 class="prof-title"><%= @user['username'] %></h1>
+<div class="prof-wrapper">
 
   <div class="post">
-    <p class=""><%= @user['first'] %></p>
-    <p class=""><%= @user['username'] %></p>
-    <p class=""><%= @user['email'] %></p>
+    <p class="">Name: <%= @user['first'] %></p>
+    <p class="">Username: <%= @user['username'] %></p>
+    <p class="">Email: <%= @user['email'] %></p>
+    <%if current_user.id == @user['id'] %>
+
+      <a href="/profile/<%= @user['id'] %>/edit">Edit</a>
+
+    <% else %>
+  </div>
+
+
+
+  <p></p>
+
+  <% end %>
   </div>
 
 </div>

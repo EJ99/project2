@@ -48,6 +48,10 @@ INSERT INTO countries (country_name) VALUES ('Afganistan');
     password_digest VARCHAR(400)
   );
 
+  ALTER TABLE users ADD COLUMN image;
+  ALTER TABLE users ADD COLUMN tagline;
+
+
 ---COMMENTS TABLE
 
 CREATE TABLE comments (
