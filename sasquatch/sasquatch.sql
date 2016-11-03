@@ -19,7 +19,7 @@ CREATE DATABASE sasquatch;
 
   CREATE TABLE countries (
     id SERIAL4 PRIMARY KEY,
-    country_name VARCHAR(200),
+    name VARCHAR(200),
   );
 
 -- could add state, city and continent later

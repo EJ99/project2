@@ -25,6 +25,7 @@ html, body{
   margin:0;
   padding:0;
   max-width: 100%;
+  background-color:#D3D3D3;
 }
 
 .nav{
@@ -47,7 +48,8 @@ html, body{
     font-family: giacco;
     text-decoration: none;
     font-size: 22px;
-    margin:0px 60px;
+    margin:0px;
+    margin-right:100px;
 }
 
 .nav a:hover{
@@ -60,8 +62,9 @@ html, body{
 
 #logo{
   font-family: gorilla;
-  line-height: 26px;
+  line-height: 22px;
   margin-top: 5px;
+  color:#FBF4DA;
 }
 
 #sass{
@@ -89,18 +92,19 @@ html, body{
     font-family: giacco;
     text-transform: uppercase;
     outline: 0;
-    background-color: #D96358;
+    color: #FBF4DA;
     width: 100px;
     border: 0;
     padding: 10px;
-    color: #FFFFFF;
+    background-color: #dd1526;
     font-size: 20px;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
     border:none;
     margin-right: 30px;
-    display:inline;
+    display: inline;
+    margin-bottom: 100px;
 }
 
 
@@ -130,11 +134,14 @@ html, body{
 }
 
 #button {
-    border: solid 1px #CCC;
-    height: 44px;
-    width: 115px;
-    color: white;
-    font-size: 14px;
+    height: 63px;
+    width: 100px;
+    background-color: #D96358;
+    font-size: 20px;
+    /*border-bottom: 5px solid white;*/
+    font-family: giacco;
+    color:white;
+    border-color: white;
 }
 
 .wrapper{
@@ -154,7 +161,7 @@ html, body{
 .search{
     padding: 0;
     margin: 0;
-    width: 700px;
+    width: 650px;
     height:60px;
     overflow: hidden;
     background-color: #fff;
@@ -163,11 +170,12 @@ html, body{
     position: relative;
     left:25%;
     top:42%;
+    border-bottom: 5px solid lightgray;
 }
 
 .search select {
-    padding: 5px 8px;
-    width: 150%;
+    padding: 5px 18px;
+    width: 101%;
     border: none;
     box-shadow: none;
     background-color: transparent;
@@ -175,7 +183,8 @@ html, body{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    font-size:20px;
+    font-size:22px;
+    font-family: giacco;
 }
 
 #disabled{
@@ -186,11 +195,37 @@ html, body{
     outline: none;
 }
 
+.search-button {
+  position: relative;
+  left:70.9%;
+  top:33.5%;
+}
+
+.wrapper{
+    margin:15% auto;
+    text-align: center;
+}
+
 /*----SIGHTINGS PAGE---*/
 
 .image{
   max-width: 650px;
   min-height: 475px;
+}
+
+.post{
+    background-color: white;
+    padding:20px;
+    display:block;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.47);
+    -moz-box-shadow:    4px 4px 8px 0px rgba(50, 50, 50, 0.47);
+    box-shadow:         4px 4px 8px 0px rgba(50, 50, 50, 0.47);
+    border-radius: 3px;
+    max-width:650px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    z-index: -4;
 
 }
 
@@ -208,7 +243,7 @@ html, body{
   font-family: giacco;
   width:33%;
   float:left;
-  margin:7% 1% 10% 13%;
+  margin:5% 1% 10% 13%;
   line-height: 30px;
   font-size: 22px;
 }
@@ -289,7 +324,7 @@ footer{
 
 .login-background{
   background-color: #D3D3D3;
-  height:1080px;
+  height:700px;
   width:100%;
   margin:0;
 }
@@ -345,3 +380,5 @@ footer{
 .form button:hover,.form button:active,.form button:focus {
   background: #dd1526;
 }
+
+/*----PROFILE PAGE ----*/

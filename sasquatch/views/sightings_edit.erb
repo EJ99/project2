@@ -1,0 +1,19 @@
+<h2>Edit Sigthing</h2>
+
+
+<form action="/sightings/all/<%= @sighting['id'] %>" method="post" >
+  <label for="">Name</label>
+  <input name="name" type="text" value="<%= @sighting['name'] %>">
+
+  <label for="">Country</label>
+  <select class="" name="country_id">
+    <% @countries.each do |country| %>
+      <option value="<%= country['id'] %>"><%= country['name'] %></option>
+      <% end %>
+  </select>
+
+  <label for="">Image URL</label>
+  <textarea name="image_url" rows="8" cols="40"><%= @sighting['image_url'] %></textarea>
+  <button>Update</button>
+</form>
+  

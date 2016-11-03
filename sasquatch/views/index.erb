@@ -7,14 +7,19 @@
 
 
 <div class="index-wrapper">
-
   <div class="search">
-    <select name="country_id">
-      <option id="disabled" value="" disabled selected>Find your nearest sasquatch..</option>
-      <% @countries.each do |country| %>
-        <option value="<%= country['id'] %>"><%= country['name'] %></option>
-      <% end %>
-    </select>
-  </div>
+    <form class="" action="/sightings/all" method="get">
+      <select name="country_id">
+        <option id="disabled" value="" disabled selected>Find one near you..</option>
+        <% @countries.each do |country| %>
+          <option value="<%= country['id'] %>"><%= country['name'] %></option>
+        <% end %>
+
+      </select>
+      </div>
+      <div class="search-button">
+        <button id="button">GO</button>
+      </div>
+    </form>
 
 </div>

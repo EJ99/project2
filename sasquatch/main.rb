@@ -44,49 +44,63 @@ get '/' do
   erb :index
 end
 
-get '/sightings/new' do  #shows the form only
+#shows the new report form if logged in or redirects to sign up page o
+get '/sightings/new' do
   redirect to '/session/new' unless logged_in? #can only add entry if logged in
   @sightings = Sightings.all
   erb :sightings_new
 end
 
-post '/sightings/all' do  #creates the post only
+#creates the new post
+post '/sightings/all' do
     binding.pry
     @sighting = Sighting.create(name: params[:name], image_url: params[:image_url], country_id: params[:country_id], user_id: current_user.id, date: params[:date])
     redirect to '/'
 end
 
+#shows sightings
 get '/sightings/all' do
   if params[:country_id]
     #this shows trips of c
     @sightings = Sighting.where(country_id: params[:country_id])
   else
-    @sightings = Sighting.all
+    @sightings = Sighting.select do | sighting |
+      sighting.user_id != nil
+    end
   end
   erb :sightings_all
 end
 
+#shows list of countries
 get '/map' do
   @countries = Country.all
   erb :map
 end
 
 #show single sighting -  search for post with that id
-get '/sightings/:id' do
-  #show single dish -  search for dish with that id
+get '/sightings/all/:id' do
+  #show single sighting -  search for sighting with that id
   @sighting = Sighting.find(params[:id])
   @comments = Comment.where(sighting_id: @sighting['id'])
   erb :sightings_show
 end
 
 
-#this is posting the new update when you click the update button
-post '/sightings/:id' do
+#this is brings up the edit form when ever you click edit
+get '/sightings/all/:id/edit' do
+  @countries = Country.all
+  @sighting = Sighting.find(params[:id])
+  erb :sightings_edit
+end
+
+
+#posts the new update when you click the update button
+post '/sightings/all/:id' do
   #sql statment to update an existing dish
   #update dishes set name = '', image_url = '' where id = 7
   @sighting = Sighting.find(params[:id])
   @sighting.update(name: params[:name], image_url: params[:image_url], country_id: params[:country_id], date: params[:date])
-  redirect to "/sightings/#{ params[:id] }"
+  redirect to "/sightings/all/#{ params[:id] }"
 end
 
 #posts the comment when the form/post comment action button is triggered
@@ -97,21 +111,25 @@ post '/comments' do
   redirect to "/sightings/#{comment['sighting_id']}"
 end
 
+#report a sighting or join to report page
 get '/join' do
   @countries = Country.all
   erb :join
 end
 
+#create new user when register form is submitted
 post '/register' do
   user = User.create(first: params[:first], email: params[:email], username: params[:username], password: params[:password])
   session[:user_id] = user.id
   redirect '/'
 end
 
+#sign in page
 get '/session/new' do
   erb :session_new
 end
 
+#verify user details
 post '/session' do
   user = User.find_by(username: params[:username])  ##if cant find the user in the database it will return NIL
   if user && user.authenticate(params[:password])
@@ -124,8 +142,17 @@ post '/session' do
   end
 end
 
+
 delete '/session' do
   #clearing the session
   session[:user_id] = nil
   redirect to '/session/new'
+end
+
+
+#PROFILE
+
+get '/profile/:id' do
+  @user = User.find(params[:id])
+  erb :profile
 end

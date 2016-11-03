@@ -11,10 +11,13 @@
       <ul class="nav">
         <li><a href="/sightings/all">SIGHTINGS</a></li>
         <li><a href="/join">+ REPORT</a></li>
-        <li><a href="/" id="logo">find my<br><span id="sass">sasquatch<span></a></li>
-        <li><a href="/map">MAP</a></li>
+        <li><a href="/" id="logo">find my<br><span id="sass">&nbsp;sasquatch<span></a></li>
+        <!-- <li><a href="/map">MAP</a></li> -->
         <!-- <li><a href="/session/new">LOGIN</a></li> -->
-        <li> <% if logged_in? %>
+        <% if logged_in? %>
+        <li><a href="/profile/<%= current_user.id %>">PROFILE</a></li>
+
+         <li>
 
               <div class="log-out">
                 <form action="/session" method="post">    <!--because there isnt a delete method use post-->
@@ -24,13 +27,15 @@
               </div>
 
               <div class="logged-in">
-                <p>Hello <%= current_user.first %></p>
+                <span>Hello <%= current_user.first %></span>
               </div>
 
             <% else %>
                 <a href="/session/new" class="log-in">LOGIN</a>
-            <% end %>
         </li>
+                <li><a href="/join">JOIN</a></li>
+            <% end %>
+
       </ul>
 
     </nav>
