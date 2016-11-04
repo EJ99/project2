@@ -1,15 +1,21 @@
-<h1 class="prof-title"><%= @user['username'] %></h1>
 <div class="prof-wrapper">
 
-  <div class="post">
-    <p class="">Name: <%= @user['first'] %></p>
-    <p class="">Username: <%= @user['username'] %></p>
-    <p class="">Email: <%= @user['email'] %></p>
-    <%if current_user.id == @user['id'] %>
+  <div class="profile-post">
+    <div class="profile-center">
+      <h1 class="prof-title"><%= @user['username'] %></h1>
+      <img class="profilepic" src="<%= @user.profilepic.url %>">
+    </div>
+    <div class="profile-about">
+      <p class="">Name: <%= @user['first'] %></p>
+      <p class="">Username: <%= @user['username'] %></p>
+      <p class="">Email: <%= @user['email'] %></p>
+      <%if current_user.id == @user['id'] %>
 
-      <a href="/profile/<%= @user['id'] %>/edit">Edit</a>
+        <a href="/profile/<%= @user['id'] %>/edit">Edit</a>
 
-    <% else %>
+      <% else %>
+   </div>
+
   </div>
 
 
@@ -19,4 +25,9 @@
   <% end %>
   </div>
 
-</div>
+
+  <footer>
+
+    <img src="/images/footer2.png" class="fix" alt="" />
+
+  </footer>

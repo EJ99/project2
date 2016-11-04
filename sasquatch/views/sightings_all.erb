@@ -2,10 +2,15 @@
   <% @sightings.each do |sighting| %>
     <div class="post">
       <img class="image" src="<%= sighting['image_url'] %>" />
-      <p id="location"><a href="/sightings/all/<%= sighting['id'] %>"><%= sighting['name'] %></a></p>
-    <p> <%= sighting['date'] %>  </p>
-    <p> Posted by: <a href="/profile/<%= sighting['user_id']%>"> <%= sighting.user.username %> </a></p>
-    <p> Location: <%=sighting.country.name %>
+
+      <div class="left">
+        <p class="sighting-title"><a href="/sightings/all/<%= sighting['id'] %>"><%= sighting['name'] %></a></p>
+        <p> Posted by: <a class="posted-by" href="/profile/<%= sighting['user_id']%>"> <%= sighting.user.username %> </a></p>
+      </div>
+      <div class="right">
+        <p class="sighting-small"> Location: <%=sighting.country.name %>
+        <p class="sighting-small"> <%= sighting['date'] %>  </p>
+      </div>
     <img class="image" src="<%= sighting.picture.url %>">
     </div>
   <% end %>

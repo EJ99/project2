@@ -11,11 +11,11 @@
       <ul class="nav">
         <li><a href="/sightings/all">SIGHTINGS</a></li>
         <li><a href="/join">+ REPORT</a></li>
-        <li><a href="/" id="logo">find my<br><span id="sass">&nbsp;sasquatch<span></a></li>
+        <li><a href="/" id="logo">find my<br><span id="sass">&nbsp;sasquatch<span><span id="com">.com</span></a></li>
         <!-- <li><a href="/map">MAP</a></li> -->
         <!-- <li><a href="/session/new">LOGIN</a></li> -->
         <% if logged_in? %>
-        <li><a href="/profile/<%= current_user.id %>">PROFILE</a></li>
+        <li><a href="/profile/<%= current_user.id %>">MY ACCOUNT</a></li>
 
          <li>
 
@@ -26,9 +26,9 @@
                 </form>
               </div>
 
-              <div class="logged-in">
-                <span>Hello <%= current_user.first %></span>
-              </div>
+
+                <span class="logged-in">Hello <%= current_user.first %></span>
+
 
             <% else %>
                 <a href="/session/new" class="log-in">LOGIN</a>

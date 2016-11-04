@@ -67,6 +67,14 @@ html, body{
   color:#FBF4DA;
 }
 
+#com{
+  font-family: gorilla;
+  line-height: 22px;
+  margin-top: 5px;
+  color:#FBF4DA;
+  font-size:18px;
+}
+
 #sass{
   font-size:35px;
 }
@@ -78,6 +86,7 @@ html, body{
   margin-right: 20px;
   margin-top: 15px;
   font-family: giacco;
+  color:white;
 }
 
 .log-out{
@@ -121,6 +130,7 @@ html, body{
    }
 
 
+
 /*----HOME PAGE---*/
 
 #input {
@@ -139,7 +149,6 @@ html, body{
     background-color: #D96358;
     font-size: 20px;
     /*border-bottom: 5px solid white;*/
-    font-family: giacco;
     color:white;
     border-color: white;
 }
@@ -199,6 +208,7 @@ html, body{
   position: relative;
   left:70.9%;
   top:33.5%;
+  font-family: giacco;
 }
 
 .wrapper{
@@ -226,7 +236,48 @@ html, body{
     margin-top: 40px;
     margin-bottom: 40px;
     z-index: -4;
+    font-family: giacco;
+    color:#221E1D;
+}
 
+.sighting-title a {
+      text-decoration: none;
+      color:#588B7E;
+}
+
+.post p{
+    margin:7px 0;
+}
+
+.left{
+  width:50%;
+  text-align: left;
+  display: inline-block;
+  margin:0;
+}
+
+.right{
+  width:49%;
+  text-align: right;
+  display: inline-block;
+  margin:0
+}
+
+.sighting-title{
+  font-size: 28px;
+}
+
+.sighting-small{
+  font-size: 18px;
+}
+
+.posted-by{
+  color:#dd1526;
+}
+
+.posted-by a{
+  color:#dd1526;
+  text-decoration: none;
 }
 
 
@@ -257,7 +308,7 @@ html, body{
   margin-top: 2%;
 }
 
-.login-page2 label{
+.login-page2 label, .login-page3 label{
   margin-bottom: 3px;
   font-family: giacco;
   font-size: 20px;
@@ -269,20 +320,22 @@ html, body{
   position: relative;
   z-index: 1;
   max-width: 420px;
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
-.form2 input {
+.form2 input, .form2 select, .form2 textarea {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #f2f2f2;
+  background: white;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 18px;
+  border-radius: 0px;
 }
+
 
 .form2 button {
   font-family: giacco;
@@ -301,6 +354,13 @@ html, body{
 
 .form2 button:hover,.form2 button:active,.form2 button:focus {
   background: #dd1526;
+}
+
+.login-page2 {
+  width:47%;
+  padding:2% 0;
+  margin:0 auto;
+  margin-top:0%;
 }
 
 
@@ -354,7 +414,7 @@ footer{
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #f2f2f2;
+  background:white;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -367,7 +427,7 @@ footer{
   font-family: giacco;
   text-transform: uppercase;
   outline: 0;
-    background: #D96358;
+  background: #D96358;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -381,17 +441,101 @@ footer{
   background: #dd1526;
 }
 
+/*---REPORT PAGE---*/
+
+.login-page3 {
+  width:30%;
+  padding:2% 0;
+  margin:0 auto;
+  margin-top:0%;
+}
+
+
+.new-entry{
+  margin:0 auto;
+  max-width: 100%;
+}
+
+
+.login-page2 label{
+  margin-bottom: 3px;
+  font-family: giacco;
+  font-size: 20px;
+  color:#373735;
+}
+
+.form2 select{
+    padding: 5px 18px;
+    border: none;
+    box-shadow: none;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size:22px;
+    font-family: giacco;
+}
+
+#file{
+  border-radius: 0px;
+  font-family: giacco;
+}
+
+
 /*----PROFILE PAGE ----*/
+
+.prof-wrapper{
+  margin:0 auto ;
+  width:100%;
+}
+
+.profile-post{
+    background-color: white;
+    display:block;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.47);
+    -moz-box-shadow:    4px 4px 8px 0px rgba(50, 50, 50, 0.47);
+    box-shadow:         4px 4px 8px 0px rgba(50, 50, 50, 0.47);
+    border-radius: 3px;
+    max-width:650px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    z-index: -4;
+    font-family: giacco;
+    color:#221E1D;
+    overflow: hidden;
+}
+
 
 .prof-title{
   font-family: gorilla;
   font-size: 35px;
-  margin:0;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width:40%;
-  padding-top: 5%;
-  margin-bottom: 0;
-  color:#373735;
+  text-align: left;
+  padding: 20px;
+  margin: 0;
+  color:#588B7E;
+  background-color: #FBF4DA;
+  width:100%;
+  border-bottom: 4px solid ;
 }
+
+.profilepic{
+	display:block;
+	width:220px;
+  height:220px;
+	margin:50px 0;
+	background-color:red;
+  float:left;
+  margin-right:20px;
+  border-radius: 4px;
+  margin-left: 35px;
+}
+
+.profile-about{
+  margin-top: 20px;
+  float:left;
+  font-size: 25px;
+}
+
+
+/*---EDIT PROFILE PAGE---*/

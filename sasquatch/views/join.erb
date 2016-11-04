@@ -1,14 +1,17 @@
 <div class="login-background">
 
 
-  <% if logged_in? %>
-
-      <div class="form-wrapper">
+<% if logged_in? %>
+<h1 class="prof-title">Gone Squatchin?</h1>
+<div class="login-page3">
+      <div class="form2">
 
         <form class="new-entry" action="/sightings/all" method="post" enctype="multipart/form-data" >
-         <input type="file" name="picture" />
           <label for="">Name</label>
           <input name="name" type="text">
+
+          <label for="">Upload Image</label>
+          <input id="file" type="file" name="picture" />
 
           <label for="">Country</label>
           <select class="" name="country_id">
@@ -20,12 +23,13 @@
           <label for="">Date</label>
           <input name="date" type="date">
 
-          <label for="">Image URL</label>
-          <textarea name="image_url" rows="8" cols="40"></textarea>
+          <!-- <label for="">Image URL</label>
+          <textarea name="image_url" rows="3" cols="40"></textarea> -->
           <button>Report</button>
         </form>
 
       </div>
+    </div>
 
   <% else %>
 
@@ -53,7 +57,7 @@
       <input name="password" type="password">
 
       <label class="hi" for="">CONFIRM PASSWORD</label>
-      <input name="text" type="password">
+      <input name="password_confirmation" type="password">
 
       <button>Sign Up</button>
     </form>

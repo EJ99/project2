@@ -55,6 +55,7 @@ end
 #creates the new post
 post '/sightings/all' do
     @sighting = Sighting.create(name: params[:name], image_url: params[:image_url], country_id: params[:country_id], user_id: current_user.id, date: params[:date], picture: params[:picture])
+    binding.pry
     redirect to '/'
 end
 
@@ -119,10 +120,17 @@ end
 
 #create new user when register form is submitted
 post '/register' do
-  user = User.create(first: params[:first], email: params[:email], username: params[:username], password: params[:password])
-  session[:user_id] = user.id
-  redirect '/'
+  @user = User.new(first: params[:first], email: params[:email], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
+  if @user.save
+    session[:user_id] = @user.id
+    redirect '/'
+    # @user.errors.messages
+  else
+    erb :join
+  end
 end
+
+#if there isnt
 
 #sign in page
 get '/session/new' do
@@ -131,12 +139,14 @@ end
 
 #verify user details
 post '/session' do
+  @errormessage = ""
   user = User.find_by(username: params[:username])  ##if cant find the user in the database it will return NIL
   if user && user.authenticate(params[:password])
     #you are in the database, let me create a session for you
     session[:user_id] = user.id  #write the user id to the session
     redirect '/'
   else
+    @errormessage = "Sorry not recognized"
     #not recoginised
     erb :session_new
   end
@@ -162,4 +172,17 @@ end
 get '/profile/:id/edit' do
   @user = User.find(params[:id])
   erb :profile_edit
+end
+
+
+#SUBMIT CHANGES
+
+post '/profile/:id' do
+  @user = User.find(params[:id])
+  # @user.update(first: params[:first], email: params[:email], profilepic: params[:profilepic])
+
+  @user.profilepic = params[:profilepic]
+  @user.save
+  binding.pry
+  erb :profile
 end
