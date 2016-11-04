@@ -513,8 +513,8 @@ footer{
   text-align: left;
   padding: 20px;
   margin: 0;
-  color:#588B7E;
-  background-color: #FBF4DA;
+  color:#FBF4DA;  
+  background-color: #588B7E;
   width:100%;
   border-bottom: 2px solid ;
 }
@@ -524,7 +524,7 @@ footer{
 	width:220px;
   height:220px;
 	margin:50px 0;
-	background-color:red;
+	background-color:lightgray;
   float:left;
   margin-right:20px;
   border-radius: 10px;
