@@ -497,7 +497,7 @@ footer{
     box-shadow:         4px 4px 8px 0px rgba(50, 50, 50, 0.47);
     border-radius: 3px;
     max-width:650px;
-    margin: 0 auto;
+    margin: 0 400px;
     margin-top: 40px;
     margin-bottom: 40px;
     z-index: -4;
@@ -509,14 +509,14 @@ footer{
 
 .prof-title{
   font-family: gorilla;
-  font-size: 35px;
+  font-size: 30px;
   text-align: left;
   padding: 20px;
   margin: 0;
   color:#588B7E;
   background-color: #FBF4DA;
   width:100%;
-  border-bottom: 4px solid ;
+  border-bottom: 2px solid ;
 }
 
 .profilepic{
@@ -527,12 +527,12 @@ footer{
 	background-color:red;
   float:left;
   margin-right:20px;
-  border-radius: 4px;
+  border-radius: 10px;
   margin-left: 35px;
 }
 
 .profile-about{
-  margin-top: 20px;
+  margin-top: 28px;
   float:left;
   font-size: 25px;
 }
