@@ -2,6 +2,7 @@
 
   <div class="post">
     <img class="image" src="<%= @sighting['image_url'] %>" alt="" />
+    <p>hello</p>
     <img class="image" src="<%= sighting.picture.url %>">
     <p class="location"><%= @sighting['name'] %></p>
     <%if current_user.id == @sighting['user_id'] %>
