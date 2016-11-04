@@ -10,7 +10,7 @@
   <div class="search">
     <form class="" action="/sightings/all" method="get">
       <select name="country_id">
-        <option id="disabled" value="" disabled selected>Find one near you..</option>
+        <option id="disabled" value="" disabled selected>Find a sasquatch near you..</option>
         <% @countries.each do |country| %>
           <option value="<%= country['id'] %>"><%= country['name'] %></option>
         <% end %>
