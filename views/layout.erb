@@ -15,7 +15,7 @@
         <!-- <li><a href="/map">MAP</a></li> -->
         <!-- <li><a href="/session/new">LOGIN</a></li> -->
         <% if logged_in? %>
-        <li><a href="/profile/<%= current_user.id %>">MY ACCOUNT</a></li>
+        <li><a id="account" href="/profile/<%= current_user.id %>">MY ACCOUNT</a></li>
 
          <li>
 
