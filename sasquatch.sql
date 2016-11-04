@@ -7,12 +7,12 @@ CREATE DATABASE sasquatch;
     country_id INTEGER,
     user_id INTEGER,
     date DATE,
+    likes INTEGER,
+    dislikes INTEGER,
+    picture TEXT
   );
 
   INSERT INTO sightings (name, image_url) VALUES ('BF sighting', 'https://i.ytimg.com/vi/adwK4irr_Yo/maxresdefault.jpg');
-
-  ALTER TABLE sightings ADD COLUMN L;
-
 
 
   ---COUNTRIES TABLE
@@ -24,17 +24,17 @@ CREATE DATABASE sasquatch;
 
 -- could add state, city and continent later
 
-INSERT INTO countries (country_name) VALUES ('United States');
-INSERT INTO countries (country_name) VALUES ('Canada');
-INSERT INTO countries (country_name) VALUES ('Australia');
-INSERT INTO countries (country_name) VALUES ('New Zealand');
-INSERT INTO countries (country_name) VALUES ('Indonesia');
-INSERT INTO countries (country_name) VALUES ('Malaysia');
-INSERT INTO countries (country_name) VALUES ('Himalayas');
-INSERT INTO countries (country_name) VALUES ('India');
-INSERT INTO countries (country_name) VALUES ('China');
-INSERT INTO countries (country_name) VALUES ('Russia');
-INSERT INTO countries (country_name) VALUES ('Afganistan');
+INSERT INTO countries (name) VALUES ('United States');
+INSERT INTO countries (name) VALUES ('Canada');
+INSERT INTO countries (name) VALUES ('Australia');
+INSERT INTO countries (name) VALUES ('New Zealand');
+INSERT INTO countries (name) VALUES ('Indonesia');
+INSERT INTO countries (name) VALUES ('Malaysia');
+INSERT INTO countries (name) VALUES ('Himalayas');
+INSERT INTO countries (name) VALUES ('India');
+INSERT INTO countries (name) VALUES ('China');
+INSERT INTO countries (name) VALUES ('Russia');
+INSERT INTO countries (name) VALUES ('Afganistan');
 
 
   ---USERS TABLE
@@ -42,15 +42,13 @@ INSERT INTO countries (country_name) VALUES ('Afganistan');
   CREATE TABLE users (
     id SERIAL4 PRIMARY KEY,
     first VARCHAR(100),
-    last VARCHAR(100),
     email VARCHAR(300),
     username VARCHAR(200),
-    password_digest VARCHAR(400)
+    password_digest VARCHAR(400),
+    image TEXT,
+    tagline TEXT,
+    profilepic TEXT
   );
-
-  ALTER TABLE users ADD COLUMN image;
-  ALTER TABLE users ADD COLUMN tagline;
-
 
 ---COMMENTS TABLE
 
@@ -62,9 +60,9 @@ CREATE TABLE comments (
 );
 
 --- LIKES TABLE
-
-CREATE TABLE likes (
-  id SERIAL4 PRIMARY KEY,
-  sighting_id INTEGER,
-  user_id INTEGER
-);
+--
+-- CREATE TABLE likes (
+--   id SERIAL4 PRIMARY KEY,
+--   sighting_id INTEGER,
+--   user_id INTEGER
+-- );
