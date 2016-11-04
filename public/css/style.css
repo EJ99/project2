@@ -513,7 +513,7 @@ footer{
   text-align: left;
   padding: 20px;
   margin: 0;
-  color:#FBF4DA;  
+  color:#FBF4DA;
   background-color: #588B7E;
   width:100%;
   border-bottom: 2px solid ;
@@ -535,6 +535,15 @@ footer{
   margin-top: 28px;
   float:left;
   font-size: 25px;
+}
+
+li{
+   list-style-type: none;
+   font-family: giacco;
+}
+
+#comments{
+  font-family: giacco;
 }
 
 
