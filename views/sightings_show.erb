@@ -28,7 +28,7 @@
   </ol>
 
   <form action="/comments" method="post">
-    <input type="hidden" name="sighting_id" value="<%= @sighting['id'] %>"> <!-- a hidden input that collects the id of current trip and attaches to the trip_id column in the comments table - but sit is the the post '/comments' method that stores it in the table-->
+    <input type="hidden" name="sighting_id" value="<%= @sighting['id'] %>"> <!-- a hidden input that collects the id of current trip and attaches to the trip_id column in the comments table - but it is the the post '/comments' method that stores it in the table-->
     <textarea name="body" rows="8" cols="40"></textarea> <!-- sends comment to body column of table -->
     <button>Post Comment</button>
   </form>
