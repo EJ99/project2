@@ -3,7 +3,7 @@
 
 <% if logged_in? %>
 <h1 class="prof-title2">Gone Squatchin?</h1>
-<div class="login-page3">
+<div class="report-form-wrapper">
       <div class="form2">
 
         <form class="new-entry" action="/sightings/all" method="post" enctype="multipart/form-data" >
@@ -32,6 +32,8 @@
     </div>
 
   <% else %>
+
+<div class="register-wrapper">
 
 <div class="para">
   <h3>Seen a sasquatch?</h1>
@@ -62,6 +64,8 @@
       <button>Sign Up</button>
     </form>
   </div>
+</div>
+
 </div>
 
 

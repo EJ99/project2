@@ -1,6 +1,6 @@
 require 'pry'
 require 'sinatra'
-# require 'sinatra/reloader'
+require 'sinatra/reloader'
 require_relative 'db_config'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'

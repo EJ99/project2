@@ -1,16 +1,20 @@
-<h1 class="prof-title">Edit Profile</h1>
+<h1 class="edit-title">Edit Profile</h1>
 
-<div class="form2">
-  <form action="/profile/<%= @user['id'] %>" method="post" enctype="multipart/form-data">
-    <label for="">Name</label>
-    <input name="first" type="text" value="<%= @user['first'] %>">
+<div class="edit-profile-wrapper">
 
-    <label for="">Email</label>
-    <input name="email" type="text" value="<%= @user['email'] %>">
+  <div class="form2">
+    <form action="/profile/<%= @user['id'] %>" method="post" enctype="multipart/form-data">
+      <label for="">Name</label>
+      <input name="first" type="text" value="<%= @user['first'] %>">
 
-    <label for="">Profile Photo</label>
-    <input id="file" type="file" name="profilepic" />
+      <label for="">Email</label>
+      <input name="email" type="text" value="<%= @user['email'] %>">
 
-    <button>Update</button>
-  </form>
+      <label for="">Profile Photo</label>
+      <input id="file" type="file" name="profilepic" />
+
+      <button>Update</button>
+    </form>
+  </div>
+
 </div>

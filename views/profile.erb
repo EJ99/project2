@@ -11,7 +11,7 @@
       <p class="">Email: <%= @user['email'] %></p>
       <%if current_user.id == @user['id'] %>
 
-        <a href="/profile/<%= @user['id'] %>/edit">Edit</a>
+        <a class="edit-button" href="/profile/<%= @user['id'] %>/edit">Edit</a>
 
       <% else %>
    </div>

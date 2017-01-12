@@ -222,8 +222,8 @@ html, body{
 /*----SIGHTINGS PAGE---*/
 
 .image{
-  max-width: 650px;
-  min-height: 475px;
+  max-width: 550px;
+  min-height: 400px;
 }
 
 .post{
@@ -234,7 +234,7 @@ html, body{
     -moz-box-shadow:    4px 4px 8px 0px rgba(50, 50, 50, 0.47);
     box-shadow:         4px 4px 8px 0px rgba(50, 50, 50, 0.47);
     border-radius: 3px;
-    max-width:650px;
+    max-width:550px;
     margin: 0 auto;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -285,6 +285,10 @@ html, body{
 
 
 /*----REGISTER PAGE----*/
+
+.register-wrapper{
+  margin-top: 2%;
+}
 
 .para h3{
   margin:0;
@@ -446,11 +450,11 @@ footer{
 
 /*---REPORT PAGE---*/
 
-.login-page3 {
+.report-form-wrapper{
   width:30%;
   padding:2% 0;
   margin:0 auto;
-  margin-top:0%;
+  margin-top:-50px;
 }
 
 
@@ -460,7 +464,7 @@ footer{
 }
 
 
-.login-page2 label{
+.report-form-wrapper label{
   margin-bottom: 3px;
   font-family: giacco;
   font-size: 20px;
@@ -495,28 +499,25 @@ footer{
 .profile-post{
     background-color: white;
     display:block;
-    -webkit-box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.47);
-    -moz-box-shadow:    4px 4px 8px 0px rgba(50, 50, 50, 0.47);
-    box-shadow:         4px 4px 8px 0px rgba(50, 50, 50, 0.47);
-    border-radius: 3px;
     max-width:650px;
     margin: 0 400px;
-    margin-top: 40px;
+    margin-top: 85px;
     margin-bottom: 40px;
     z-index: -4;
     font-family: giacco;
     color:#221E1D;
     overflow: hidden;
+    border: 10px solid darkgrey;
 }
 
 
 .prof-title{
-  font-family: gorilla;
-  font-size: 30px;
+  font-family:dinmed;
+  font-size: 25px;
   text-align: left;
   padding: 20px;
   margin: 0;
-  color:#FBF4DA;
+  color:white;
   background-color: #588B7E;
   width:100%;
   border-bottom: 2px solid ;
@@ -539,9 +540,11 @@ footer{
   height:220px;
 	margin:50px 0;
 	background-color:lightgray;
+  background-image: url(../images/sasq.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
   float:left;
   margin-right:20px;
-  border-radius: 10px;
   margin-left: 35px;
 }
 
@@ -560,5 +563,22 @@ li{
   font-family: giacco;
 }
 
+.edit-button{
+  color:red;
+}
+
 
 /*---EDIT PROFILE PAGE---*/
+
+.edit-title{
+  text-align: center;
+  font-family: dinmed;
+}
+
+/*.form2 label{
+  font-family: din
+}*/
+
+.edit-profile-wrapper{
+  margin:10% 40%;
+}
