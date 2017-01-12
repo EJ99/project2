@@ -4,7 +4,7 @@
     <p class="location"><%= @sighting['name'] %></p>
     <p class="sighting-small"> <%= @sighting['date'] %>  </p>
     <img class="image" src="<%= @sighting.picture.url %>">
-    <%if current_user.id == @sighting['user_id'] %>
+    <%if current_user == @sighting['user_id'] %>
 
       <a href="/sightings/all/<%= @sighting['id'] %>/edit">Edit</a>
 
