@@ -12,7 +12,8 @@ require_relative 'models/comment'
 
 ## SESSION METHODS
 
-enable :sessions #creates session as a global object - basically a hash
+enable :sessions
+ #creates session as a global object - basically a hash
 #it just store the current user_id once logged in
 #user_id is a made up thing
 #can also put :last_url so that the website remembers the last page they were on and go back to it after logged in
