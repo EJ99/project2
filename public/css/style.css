@@ -33,8 +33,14 @@ html, body{
   margin:0;
   padding:0;
   text-align:center;
-  background-color: #588B7E;
+  background: -moz-linear-gradient(top, rgba(96,168,147,1) 0%, rgba(88,139,126,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(96,168,147,1)), color-stop(100%, rgba(88,139,126,1)));
+  background: -webkit-linear-gradient(top, rgba(96,168,147,1) 0%, rgba(88,139,126,1) 100%);
   padding:18px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.47);
+  -moz-box-shadow:    4px 4px 8px 0px rgba(50, 50, 50, 0.47);
+  box-shadow:         4px 4px 8px 0px rgba(50, 50, 50, 0.47);
+  width:100%;
 }
 
 .nav li{
@@ -43,40 +49,53 @@ html, body{
 
 .nav a{
     display:inline-block;
-    padding:2px 10px 8px;
+    padding:2px 10px 2px;
     color:white;
     font-family: giacco;
     text-decoration: none;
     font-size: 22px;
     margin:0px;
     margin-right:100px;
+    border-bottom:3px solid rgb(90, 145, 130);
 }
 
 .nav a:hover{
   color:#FBF4DA;
+  border-bottom:3px solid #FBF4DA;
+}
+
+.nav #logo:hover{
+  border-bottom: none;
 }
 
 /*.nav a:active{
   color:#FBF4DA;
 }*/
 
+.findmy{
+  margin-right: 0px;   /*95px left align*/
+}
+
 #logo{
   font-family: gorilla;
-  line-height: 22px;
+  line-height: 28px;
   margin-top: 5px;
-  color:#FBF4DA;
+  color:brown;
+  -webkit-text-stroke: 1.2px #FBF4DA;
+  font-size: 28px;
 }
 
 #com{
   font-family: gorilla;
   line-height: 22px;
   margin-top: 5px;
-  color:#FBF4DA;
-  font-size:18px;
+  color:brown;
+  font-size:23px;
+  /*-webkit-text-stroke: 1.5px brown;  brown*/
 }
 
 #sass{
-  font-size:35px;
+  font-size:40px;
 }
 
 .logged-in{
@@ -93,7 +112,7 @@ html, body{
   font-size: 20px;
   display: inline;
   float:right;
-  margin-right: 20px;
+  margin-right: 80px;
   margin-top: 30px;
 }
 
@@ -101,11 +120,11 @@ html, body{
     font-family: giacco;
     text-transform: uppercase;
     outline: 0;
-    color: #FBF4DA;
+    color: white;
     width: 100px;
     border: 0;
     padding: 10px;
-    background-color: #dd1526;
+    background: brown ; /* #D96358*/
     font-size: 20px;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
@@ -221,6 +240,10 @@ html, body{
 
 /*----SIGHTINGS PAGE---*/
 
+.hideme{
+    opacity:0;
+}
+
 .image{
   max-width: 550px;
   min-height: 400px;
@@ -230,9 +253,9 @@ html, body{
     background-color: white;
     padding:20px;
     display:block;
-    -webkit-box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.47);
-    -moz-box-shadow:    4px 4px 8px 0px rgba(50, 50, 50, 0.47);
-    box-shadow:         4px 4px 8px 0px rgba(50, 50, 50, 0.47);
+    -webkit-box-shadow: 5px 5px 105px 20px rgba(255,255,255,0.8);
+    -moz-box-shadow: 5px 5px 105px 20px rgba(255,255,255,0.8);
+    box-shadow: 5px 5px 105px 20px rgba(255,255,255,0.8);
     border-radius: 3px;
     max-width:550px;
     margin: 0 auto;
@@ -283,6 +306,10 @@ html, body{
   text-decoration: none;
 }
 
+.visitor-comments{
+  font-family: giacco;
+  color:red;
+}
 
 /*----REGISTER PAGE----*/
 
@@ -497,6 +524,10 @@ footer{
 }
 
 .profile-post{
+    background-image: url(../images/member4.png);
+    background-size: 22%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
     background-color: white;
     display:block;
     max-width:650px;
@@ -504,10 +535,13 @@ footer{
     margin-top: 85px;
     margin-bottom: 40px;
     z-index: -4;
-    font-family: giacco;
+    font-family: dinreg;
     color:#221E1D;
     overflow: hidden;
     border: 10px solid darkgrey;
+    -webkit-box-shadow: 5px 5px 125px 29px rgba(255,255,255,1);
+    -moz-box-shadow: 5px 5px 125px 29px rgba(255,255,255,1);
+    box-shadow: 5px 5px 125px 29px rgba(255,255,255,1);
 }
 
 
@@ -533,7 +567,6 @@ footer{
   width:100%;
 }
 
-
 .profilepic{
 	display:block;
 	width:220px;
@@ -552,7 +585,14 @@ footer{
   margin-top: 28px;
   float:left;
   font-size: 25px;
+  line-height: 20px;
 }
+
+.member-no{
+  font-size: 20px;
+  line-height: 0px;
+}
+
 
 li{
    list-style-type: none;
@@ -564,7 +604,10 @@ li{
 }
 
 .edit-button{
-  color:red;
+  color:darkred;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 
@@ -582,3 +625,5 @@ li{
 .edit-profile-wrapper{
   margin:10% 40%;
 }
+
+/* ---- MAP ---- */

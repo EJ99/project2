@@ -3,15 +3,16 @@
   <div class="profile-post">
     <div class="profile-center">
       <h1 class="prof-title"><%= @user['username'] %></h1>
+      <!-- <p class="member-no">Member #5442</p> -->
       <img class="profilepic" src="<%= @user.profilepic.url %>">
     </div>
     <div class="profile-about">
       <p class="">Name: <%= @user['first'] %></p>
       <p class="">Username: <%= @user['username'] %></p>
       <p class="">Email: <%= @user['email'] %></p>
-      <%if current_user == @user['id'] %>
+      <%if current_user.id == @user['id'] %>
 
-        <a class="edit-button" href="/profile/<%= @user['id'] %>/edit">Edit</a>
+        <a class="edit-button" href="/profile/<%= @user['id'] %>/edit">EDIT</a>
 
       <% else %>
    </div>

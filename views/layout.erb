@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>find my sasquatch</title>
     <link rel="stylesheet" href="/css/style.css" media="screen" title="no title">
+
   </head>
   <body>
 
@@ -11,42 +12,34 @@
       <ul class="nav">
         <li><a href="/sightings/all">SIGHTINGS</a></li>
         <li><a href="/join">+ REPORT</a></li>
-        <li><a href="/" id="logo">find my<br><span id="sass">&nbsp;sasquatch<span><span id="com">.com</span></a></li>
-        <!-- <li><a href="/map">MAP</a></li> -->
-        <!-- <li><a href="/session/new">LOGIN</a></li> -->
+        <li><a href="/" id="logo"><span class="findmy"> find my</span><br><span id="sass">&nbsp;sasquatch<span><span id="com"></span></a></li>
+
         <% if logged_in? %>
         <li><a id="account" href="/profile/<%= current_user.id %>">MY ACCOUNT</a></li>
-
-         <li>
-
-              <div class="log-out">
-                <form action="/session" method="post">    <!--because there isnt a delete method use post-->
-                  <input type="hidden" name="_method" value="delete">    <!--- and this allows a delete session -->
-                  <button>Log Out</button>
-                </form>
-              </div>
-
-
-                <span class="logged-in">Hello <%= current_user.first %></span>
-
-
-            <% else %>
-                <a href="/session/new" class="log-in">LOGIN</a>
+        <li>
+            <div class="log-out">
+              <form action="/session" method="post">    <!--because there isnt a delete method use post-->
+                <input type="hidden" name="_method" value="delete">    <!--- and this allows a delete session -->
+                <button>Log Out</button>
+              </form>
+            </div>
+              <!-- <span class="logged-in">Welcome <%= current_user.first %>!</span> -->
+        <% else %>
+            <a href="/session/new" class="log-in">LOGIN</a>
         </li>
-                <li><a href="/join">JOIN</a></li>
-            <% end %>
-
+            <li><a href="/join">JOIN</a></li>
+        <% end %>
       </ul>
-
     </nav>
 
+    <div class="body-wrapper">
+      <%= yield %>
+    <div>
 
+    <footer></footer>
 
-    <%= yield %>
-
-    <footer>
-
-    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/fadein.js"></script>
 
   </body>
 </html>
