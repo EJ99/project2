@@ -42,7 +42,6 @@ get '/' do
   #request.port
   #request.host
   @countries = Country.all
-  # binding.pry
   erb :index
 end
 
@@ -56,7 +55,6 @@ end
 #creates the new post
 post '/sightings/all' do
     @sighting = Sighting.create(name: params[:name], image_url: params[:image_url], country_id: params[:country_id], user_id: current_user.id, date: params[:date], picture: params[:picture])
-    binding.pry
     redirect to '/'
 end
 
@@ -184,6 +182,5 @@ post '/profile/:id' do
 
   @user.profilepic = params[:profilepic]
   @user.save
-  binding.pry
   erb :profile
 end

@@ -9,7 +9,7 @@
       <p class="">Name: <%= @user['first'] %></p>
       <p class="">Username: <%= @user['username'] %></p>
       <p class="">Email: <%= @user['email'] %></p>
-      <%if current_user == @user['id'] %>
+      <%if current_user.id == @user['id'] %>
 
         <a class="edit-button" href="/profile/<%= @user['id'] %>/edit">EDIT</a>
 
