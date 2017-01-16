@@ -80,8 +80,7 @@ html, body{
   font-family: gorilla;
   line-height: 28px;
   margin-top: 5px;
-  color:brown;
-  -webkit-text-stroke: 1.2px #FBF4DA;
+  color:#FBF4DA;
   font-size: 28px;
 }
 
@@ -89,7 +88,7 @@ html, body{
   font-family: gorilla;
   line-height: 22px;
   margin-top: 5px;
-  color:brown;
+  color:#FBF4DA;
   font-size:23px;
   /*-webkit-text-stroke: 1.5px brown;  brown*/
 }
@@ -240,6 +239,16 @@ html, body{
 
 /*----SIGHTINGS PAGE---*/
 
+.instructions{
+  background-color:#FBF4DA;
+  padding:40px 220px;
+  font-family: giacco;
+  font-size: 40px;
+  text-align: center;
+  color:black;
+  margin-top: 40px;
+}
+
 .hideme{
     opacity:0;
 }
@@ -253,9 +262,6 @@ html, body{
     background-color: white;
     padding:20px;
     display:block;
-    -webkit-box-shadow: 5px 5px 105px 20px rgba(255,255,255,0.8);
-    -moz-box-shadow: 5px 5px 105px 20px rgba(255,255,255,0.8);
-    box-shadow: 5px 5px 105px 20px rgba(255,255,255,0.8);
     border-radius: 3px;
     max-width:550px;
     margin: 0 auto;
@@ -588,10 +594,7 @@ footer{
   line-height: 20px;
 }
 
-.member-no{
-  font-size: 20px;
-  line-height: 0px;
-}
+
 
 
 li{
