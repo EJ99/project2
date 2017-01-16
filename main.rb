@@ -1,6 +1,6 @@
 require 'pry'
 require 'sinatra'
-# require 'sinatra/reloader'
+require 'sinatra/reloader'
 require_relative 'db_config'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
@@ -13,6 +13,7 @@ require_relative 'models/comment'
 ## SESSION METHODS
 
 enable :sessions
+set :session_secret, '*&(^B234'
  #creates session as a global object - basically a hash
 #it just store the current user_id once logged in
 #user_id is a made up thing
